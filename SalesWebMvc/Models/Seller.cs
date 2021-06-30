@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace SalesWebMvc.Models
@@ -9,7 +10,10 @@ namespace SalesWebMvc.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        [Display(Name = "Base Salary")]
+
         public double BaseSalary { get; set; }
+        [Display(Name = "Brith Date")]
         public DateTime BirthDate { get; set; }
 
         public Department Department { get; set; }
