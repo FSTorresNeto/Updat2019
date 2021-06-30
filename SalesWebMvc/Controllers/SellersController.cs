@@ -55,8 +55,16 @@ namespace SalesWebMvc.Controllers
         }
         public IActionResult Delete(int id)
         {
+            try
+            {
             _sellerService.Remove(id);
             return RedirectToAction(nameof(Index));
+            }
+            catch (IntegrityException e )
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
+            }
+           
         }
 
         public IActionResult Details(int? id)

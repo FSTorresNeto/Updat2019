@@ -14,6 +14,7 @@ namespace SalesWebMvc.Models
 
         public double BaseSalary { get; set; }
         [Display(Name = "Brith Date")]
+        
         public DateTime BirthDate { get; set; }
 
         public Department Department { get; set; }

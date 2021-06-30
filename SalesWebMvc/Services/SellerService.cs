@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Services.Exceptions;
 
 namespace SalesWebMvc.Services
 {
@@ -35,9 +36,17 @@ namespace SalesWebMvc.Services
         }
         public void Remove (int id)
         {
+            try
+            {
             var obj = _context.Seller.Find(id);
             _context.Seller.Remove(obj);
             _context.SaveChanges();
+            }
+            catch (DbUpdateException e)
+            {
+                throw new IntegrityException(e.Message);
+            }
+            
         }
         public void Update(Seller obj)
         {
