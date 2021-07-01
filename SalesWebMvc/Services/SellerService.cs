@@ -36,23 +36,17 @@ namespace SalesWebMvc.Services
         }
         public void Remove (int id)
         {
-            try
-            {
             var obj = _context.Seller.Find(id);
             _context.Seller.Remove(obj);
             _context.SaveChanges();
-            }
-            catch (DbUpdateException e)
-            {
-                throw new IntegrityException(e.Message);
-            }
+      
             
         }
         public void Update(Seller obj)
         {
-            if (_context.Seller.Any(X => X.Id == obj.Id))
+            if (!_context.Seller.Any(x => x.Id == obj.Id))
             {
-                throw new DllNotFoundException("Id not found");
+                throw new NotFoundException("Id not found");
             }
             try {
                 _context.Update(obj);

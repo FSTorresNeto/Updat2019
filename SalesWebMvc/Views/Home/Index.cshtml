@@ -1,12 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4, "text-danger">Welcome</h1>
 </div>
 
-<p>@ViewData["email"]</p>
 
-<p>@ViewData["nome"]</p>
+<div class="text-center">
+    <label>Digite seu nome: </label>
+    <input type="text" id="name" />
+    <br />
+    <br />
+    <label>Digite seu e-mail: </label>
+    <input type="text" id="email" />
+    <br />
+    <br />
+    <button id="log" class=" btn btn-danger">Login </button>
+
+</div> 
