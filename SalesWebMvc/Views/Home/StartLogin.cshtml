@@ -1,0 +1,25 @@
+﻿@{
+   
+     ViewData["Title"] = "Login Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4, " text-danger">Welcome</h1>
+</div>
+
+<div class="text-center">
+    <label>Digite seu nome: </label>
+    <input type="text" id="name" />
+    <br />
+    <br />
+    <label>Digite seu e-mail: </label>
+    <input type="text" id="email" />
+    <br />
+    <br />
+
+    <form asp-action="Home">
+
+        <a asp-action="Index" class="btn btn-danger">Back to List</a>
+  
+    </form>
+</div>
